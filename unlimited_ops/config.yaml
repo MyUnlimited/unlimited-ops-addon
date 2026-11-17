@@ -2,7 +2,7 @@
 # https://contributors.home-assistant.io/apps/reference/configuration/ (Stand 2026-10-22).
 # version ist zugleich der Tag des Images; erst bauen (.github/workflows/image.yml), dann hier erhoehen.
 name: Unlimited Ops
-version: '0.2.0'
+version: '0.2.1'
 slug: unlimited_ops
 description: Betriebswerkzeug für Unlimited
 url: https://github.com/MyUnlimited/unlimited-ops
