@@ -1,8 +1,10 @@
 # App fuer Home Assistant (Owner 2026-11-17). Schluessel nach der Referenz unter
 # https://contributors.home-assistant.io/apps/reference/configuration/ (Stand 2026-10-22).
 # version ist zugleich der Tag des Images; erst bauen (.github/workflows/image.yml), dann hier erhoehen.
-name: Unlimited Ops
-version: '0.2.2'
+# Name und Seitenleiste (Owner 2026-11-17): "Unlimited Betrieb", in der Seitenleiste kurz "Unlimited". slug bleibt
+# unlimited_ops: Der Supervisor fuehrt die App und ihren Datenordner unter dem slug, ein neuer gaebe eine neue App.
+name: Unlimited Betrieb
+version: '0.2.3'
 slug: unlimited_ops
 description: Betriebswerkzeug für Unlimited
 url: https://github.com/MyUnlimited/unlimited-ops
@@ -17,7 +19,7 @@ boot: auto
 ingress: true
 ingress_port: 8099
 panel_icon: mdi:server-network
-panel_title: Ops
+panel_title: Unlimited
 # Sicherung im Lauf: vorher haelt ops das Schreiben des Zustands an, danach geht es weiter. Zwischenspeicher bleiben
 # draussen (docs/neubau.md, Abschnitt 9).
 backup: hot
