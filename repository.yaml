@@ -1,0 +1,4 @@
+# Quelle für Apps von Home Assistant. Der Code liegt privat in MyUnlimited/unlimited-ops; dieses Repository enthält
+# nur die Beschreibung der App, die dortige CI zieht sie bei jeder Version nach (.github/workflows/image.yml).
+name: Unlimited
+url: https://github.com/MyUnlimited/unlimited-ops-addon
