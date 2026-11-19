@@ -4,7 +4,7 @@
 # Name und Seitenleiste (Owner 2026-11-17): "Unlimited Betrieb", in der Seitenleiste kurz "Unlimited". slug bleibt
 # unlimited_ops: Der Supervisor fuehrt die App und ihren Datenordner unter dem slug, ein neuer gaebe eine neue App.
 name: Unlimited Betrieb
-version: '0.2.5'
+version: '0.2.6'
 slug: unlimited_ops
 description: Betriebswerkzeug für Unlimited
 url: https://github.com/MyUnlimited/unlimited-ops
@@ -20,6 +20,16 @@ ingress: true
 ingress_port: 8099
 panel_icon: mdi:server-network
 panel_title: Unlimited
+# Home Assistant (Owner 2026-11-19, docs/neubau.md Abschnitt 2): Sensoren und Knoepfe ueber MQTT-Discovery mit dem
+# Mosquitto-Add-on (Zugang vom Supervisor, mqtt:want: ohne Broker startet ops trotzdem), Push ueber die API von Home
+# Assistant an die Dienste aus notify_service (durch Komma getrennt, etwa mobile_app_pixel).
+services:
+  - mqtt:want
+homeassistant_api: true
+options:
+  notify_service: ''
+schema:
+  notify_service: str?
 # Sicherung im Lauf: vorher haelt ops das Schreiben des Zustands an, danach geht es weiter. Zwischenspeicher bleiben
 # draussen (docs/neubau.md, Abschnitt 9).
 backup: hot
