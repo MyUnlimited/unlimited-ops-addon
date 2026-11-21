@@ -4,7 +4,7 @@
 # Name und Seitenleiste (Owner 2026-11-17): "Unlimited Betrieb", in der Seitenleiste kurz "Unlimited". slug bleibt
 # unlimited_ops: Der Supervisor fuehrt die App und ihren Datenordner unter dem slug, ein neuer gaebe eine neue App.
 name: Unlimited Betrieb
-version: '0.3.7'
+version: '0.3.8'
 slug: unlimited_ops
 description: Betriebswerkzeug für Unlimited
 url: https://github.com/MyUnlimited/unlimited-ops
