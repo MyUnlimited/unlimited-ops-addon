@@ -4,7 +4,7 @@
 # Name und Seitenleiste (Owner 2026-11-17): "Unlimited Betrieb", in der Seitenleiste kurz "Unlimited". slug bleibt
 # unlimited_ops: Der Supervisor fuehrt die App und ihren Datenordner unter dem slug, ein neuer gaebe eine neue App.
 name: Unlimited Betrieb
-version: '0.3.16'
+version: '0.3.17'
 slug: unlimited_ops
 description: Betriebswerkzeug für Unlimited
 url: https://github.com/MyUnlimited/unlimited-ops
@@ -18,6 +18,13 @@ startup: application
 boot: auto
 ingress: true
 ingress_port: 8099
+# API aus dem Heimnetz (Owner 2026-11-21, docs/api.md): eigener Port neben Ingress. ops nimmt dort nur Anfragen aus
+# 10.10.10.0/24 an (apps/addon/server/api-server.ts); der Port wird im Router nicht ins Internet freigegeben. Ohne
+# host_network: Docker leitet den Port mit DNAT weiter, die Quelladresse bleibt erhalten.
+ports:
+  8100/tcp: 8100
+ports_description:
+  8100/tcp: API für ops aus dem Heimnetz (nur 10.10.10.0/24, mit Token)
 panel_icon: mdi:server-network
 panel_title: Unlimited
 # Home Assistant (Owner 2026-11-19, docs/neubau.md Abschnitt 2): Sensoren und Knoepfe ueber MQTT-Discovery mit dem
